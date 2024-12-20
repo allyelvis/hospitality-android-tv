@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hospitality-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hospitality-backend
+  template:
+    metadata:
+      labels:
+        app: hospitality-backend
+    spec:
+      containers:
+      - name: hospitality-backend
+        image: hospitality-backend:latest
+        ports:
+        - containerPort: 3000
